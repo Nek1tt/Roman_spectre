@@ -26,7 +26,7 @@ import pandas as pd
 import seaborn as sns
 from sklearn.decomposition import PCA
 
-from constants import COLORS
+from Roman_spectre.constants import COLORS
 
 
 # ---------------------------------------------------------------------------
@@ -216,7 +216,7 @@ def plot_cnn_saliency(
     out_dir: Path,
     save_plots: bool,
 ) -> None:
-    from cnn_model import try_import_torch
+    from Roman_spectre.cnn_model import try_import_torch
     torch_mods = try_import_torch()
     if torch_mods[0] is None or trainer.model is None:
         return

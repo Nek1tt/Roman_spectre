@@ -579,9 +579,17 @@ class RamanCNNPredictor:
         spec_2ch = np.stack([spec_proc, d2], axis=0)[np.newaxis, ...]  # (1,2,L)
 
         with self._torch.no_grad():
-            X_t    = self._torch.FloatTensor(spec_2ch.astype(np.float32))
+            # 1. Получаем устройство, на котором сейчас находится модель (cpu или cuda)
+            device = next(self._nn.parameters()).device 
+            
+            # 2. Создаем тензор и сразу переносим его на нужное устройство
+            X_t    = self._torch.FloatTensor(spec_2ch.astype(np.float32)).to(device)
+            
+            # 3. Делаем предсказание
             logits = self._nn(X_t)
-            proba_arr = self._torch.softmax(logits, dim=1).numpy()[0]
+            
+            # 4. ОБЯЗАТЕЛЬНО возвращаем результат на cpu перед вызовом .numpy()
+            proba_arr = self._torch.softmax(logits, dim=1).cpu().numpy()[0]
 
         pred_idx   = int(np.argmax(proba_arr))
         pred_label = self.le.inverse_transform([pred_idx])[0]

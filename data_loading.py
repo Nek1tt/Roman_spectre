@@ -13,7 +13,7 @@ from typing import Dict, List, Optional, Tuple
 import numpy as np
 import pandas as pd
 
-from constants import (
+from Roman_spectre.constants import (
     CLASS_DIRS, ANIMAL_RE, BRAIN_REGIONS,
     CENTER_RE, PLACE_RE, BAND_RANGES,
 )

@@ -36,8 +36,8 @@ from inference_utils import (
 # Константы
 # ─────────────────────────────────────────────────────────
 PRELOADED_MODELS = {
-    "Центр 1500 см⁻¹ (амиды, белки)": "weights/best_model_center1500.pkl",
-    "Центр 2900 см⁻¹ (липиды, CH)": "weights/best_model_center2900.pkl",
+    "Центр 1500 см⁻¹ (амиды, белки)": "outputs/best_model_center1500.pkl",
+    "Центр 2900 см⁻¹ (липиды, CH)": "outputs/best_model_center2900.pkl",
 }
 
 BRAIN_REGIONS = ["unknown", "cortex", "striatum", "cerebellum"]

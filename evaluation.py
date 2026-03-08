@@ -24,8 +24,8 @@ from sklearn.model_selection import (
 from sklearn.preprocessing import LabelEncoder
 from tqdm import tqdm
 
-from ml_models import OptunaRidgeClf
-from preprocessing import preprocess_map_pixels
+from Roman_spectre.ml_models import OptunaRidgeClf
+from Roman_spectre.preprocessing import preprocess_map_pixels
 
 
 # ---------------------------------------------------------------------------
@@ -169,7 +169,7 @@ def run_logo_cnn(
     args: argparse.Namespace,
 ) -> Optional[pd.DataFrame]:
     """Leave-One-Group-Out CV for the 2-channel CNN."""
-    from cnn_model import CNNTrainer, try_import_torch
+    from Roman_spectre.cnn_model import CNNTrainer, try_import_torch
 
     torch_mods = try_import_torch()
     if torch_mods[0] is None:
