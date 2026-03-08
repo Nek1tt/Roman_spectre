@@ -15,7 +15,7 @@ import numpy as np
 from joblib import Parallel, delayed
 from tqdm import tqdm
 
-from Roman_spectre.preprocessing import preprocess_spectrum
+from preprocessing import preprocess_spectrum
 
 
 # ---------------------------------------------------------------------------

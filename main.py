@@ -111,7 +111,7 @@ def main() -> None:
         if not args.predict_dir:
             print("ERROR: --predict_dir required for inference mode")
             return
-        from Roman_spectre.inference import run_inference
+        from inference import run_inference
         run_inference(args)
         return
 
@@ -144,8 +144,8 @@ def main() -> None:
     print("=" * 65)
 
     # ── Training mode ────────────────────────────────────────────────────────
-    from Roman_spectre.data_loading import load_dataset_maps
-    from Roman_spectre.pipeline import run_pipeline, run_fusion
+    from data_loading import load_dataset_maps
+    from pipeline import run_pipeline, run_fusion
 
     all_maps = load_dataset_maps(args.data_root, n_grid=args.n_grid)
     results: Dict[str, Optional[Dict]] = {}

@@ -13,8 +13,8 @@ import joblib
 import numpy as np
 import pandas as pd
 
-from Roman_spectre.features import featurize_single_raw_spectrum
-from Roman_spectre.preprocessing import preprocess_spectrum
+from features import featurize_single_raw_spectrum
+from preprocessing import preprocess_spectrum
 
 
 # ---------------------------------------------------------------------------
@@ -122,7 +122,7 @@ def run_inference(args: argparse.Namespace) -> None:
             print("ERROR: --cnn_meta required when using --load_cnn")
             return
 
-        from Roman_spectre.cnn_model import CNNTrainer, try_import_torch
+        from cnn_model import CNNTrainer, try_import_torch
         torch_mods = try_import_torch()
         if torch_mods[0] is None:
             print("ERROR: PyTorch required for CNN inference")

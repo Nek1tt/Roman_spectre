@@ -16,14 +16,14 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
-from Roman_spectre.constants import BAND_RANGES
-from Roman_spectre.features import build_pixel_feature_matrix
-from Roman_spectre.ml_models import OptunaRidgeClf, get_ml_models
-from Roman_spectre.evaluation import (
+from constants import BAND_RANGES
+from features import build_pixel_feature_matrix
+from ml_models import OptunaRidgeClf, get_ml_models
+from evaluation import (
     permutation_test, run_gss, run_logo_cnn, run_logo_ml, run_sgkf,
 )
-from Roman_spectre.preprocessing import preprocess_map_pixels
-from Roman_spectre.visualisation import (
+from preprocessing import preprocess_map_pixels
+from visualisation import (
     plot_confusion_matrix, plot_cv_all, plot_feature_importance,
     plot_pca, plot_shap_ml, plot_cnn_saliency,
 )
@@ -91,7 +91,7 @@ def run_pipeline(
         all_logo_rows.append(logo_ml)
 
     if not args.skip_cnn:
-        from Roman_spectre.cnn_model import try_import_torch
+        from cnn_model import try_import_torch
         torch_mods = try_import_torch()
         if torch_mods[0] is not None:
             torch = torch_mods[0]
@@ -184,7 +184,7 @@ def run_pipeline(
         print(f"  💾 ML model saved → {save_path}")
 
     if not args.skip_cnn and "CNN-1D-Res" in logo_df["Model"].values:
-        from Roman_spectre.cnn_model import CNNTrainer, try_import_torch
+        from cnn_model import CNNTrainer, try_import_torch
         torch_mods = try_import_torch()
         if torch_mods[0] is not None:
             torch  = torch_mods[0]
