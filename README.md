@@ -22,7 +22,7 @@
 ### Через Docker (рекомендуется)
 
 ```bash
-git clone https://github.com/Nek1tt/Roman_spectre.git
+git clone https://github.com/Nek1tt/Raman-Spectrum-Analyzer.git
 cd Roman_spectre
 docker build -t raman-classifier .
 docker run -p 8080:8080 raman-classifier
@@ -33,7 +33,7 @@ docker run -p 8080:8080 raman-classifier
 ### Без Docker
 
 ```bash
-git clone https://github.com/Nek1tt/Roman_spectre.git
+git clone https://github.com/Nek1tt/Raman-Spectrum-Analyzer.git
 cd Roman_spectre
 pip install -r requirements.txt
 python app_gradio.py
