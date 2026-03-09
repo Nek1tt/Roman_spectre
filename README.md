@@ -35,7 +35,7 @@ docker run -p 8080:8080 raman-classifier
 ## 📁 Структура репозитория
 
 ```
-Roman_spectre/
+Raman-Spectrum-Analyzer/
 │
 ├── app_gradio.py          # Gradio-интерфейс (прямая и обратная задача)
 ├── main.py                # CLI-точка входа для обучения / инференса
@@ -88,7 +88,6 @@ Roman_spectre/
     ├── cnn_weights_center2900.pt
     ├── cnn_meta_center1500.pkl
     ├── cnn_meta_center2900.pkl
-    ├── predictions.csv
     └── *.png               # Графики: PCA, матрицы ошибок, saliency
 ```
 
