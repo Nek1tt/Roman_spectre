@@ -30,17 +30,6 @@ docker run -p 8080:8080 raman-classifier
 
 Откройте в браузере: **http://localhost:8080**
 
-### Без Docker
-
-```bash
-git clone https://github.com/Nek1tt/Raman-Spectrum-Analyzer.git
-cd Roman_spectre
-pip install -r requirements.txt
-python app_gradio.py
-```
-
-Откройте в браузере: **http://127.0.0.1:8080**
-
 ---
 
 ## 📁 Структура репозитория
@@ -122,8 +111,8 @@ Roman_spectre/
 ## ⚙️ Установка
 
 ```bash
-git clone <repo>
-cd Roman_spectre
+git clone https://github.com/Nek1tt/Raman-Spectrum-Analyzer.git
+cd Raman-Spectrum-Analyzer
 pip install -r requirements.txt
 ```
 
